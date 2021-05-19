@@ -6,7 +6,7 @@ public class TPP : MonoBehaviour
 {
 
     public CharacterController controller;
-    public Transform Cam;
+    public Transform Cam; // ref for camera
     public Transform GroundCheck;
 
     public float gravity = -9.81f;
@@ -15,13 +15,13 @@ public class TPP : MonoBehaviour
     public LayerMask groundMask; // LayerMask is a function
     public float speed = 6f;
     public float smoothtime = 0.1f;
-    float smoothvelocity;
+    float smoothvelocity; // purpose is to create a ref in float angle
 
     bool isGrounded;
     Vector3 velocity;
 
 
-    private void FixedUpdate()// to make the gravity constant 
+    private void FixedUpdate()// to apply constant gravity
     {
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
 
